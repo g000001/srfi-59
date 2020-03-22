@@ -1,6 +1,6 @@
 ;;;; srfi-59.lisp
 
-(cl:in-package :srfi-59.internal)
+(cl:in-package "https://github.com/g000001/srfi-59#internals")
 
 ;;@ (implementation-vicinity) should be defined to be the pathname of
 ;;; the directory where any auxillary files to your Scheme
@@ -21,7 +21,7 @@
   (let ((library-path
 	 (or
 	  ;; Use this getenv if your implementation supports it.
-	  (srfi-98:get-environment-variable "SCHEME_LIBRARY_PATH")
+	  (get-environment-variable "SCHEME_LIBRARY_PATH")
 	  ;; Use this path if your scheme does not support GETENV
 	  ;; or if SCHEME_LIBRARY_PATH is not set.
           (let ((st (software-type)))
@@ -39,7 +39,7 @@
 ;;; directory, the directory which typically contains files which
 ;;; customize a computer environment for a user.
 (define-function (home-vicinity)
-  (let ((home (srfi-98:get-environment-variable "HOME")))
+  (let ((home (get-environment-variable "HOME")))
     (and home
          (let ((st (software-type)))
            (declare (ignorable st))

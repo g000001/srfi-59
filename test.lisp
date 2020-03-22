@@ -1,10 +1,12 @@
-(cl:in-package :srfi-59.internal)
+(cl:in-package "https://github.com/g000001/srfi-59#internals")
 
-(def-suite srfi-59)
 
-(in-suite srfi-59)
+(def-suite* srfi-59)
 
 
 (test vicinity
   (is (string= (home-vicinity)
-               (srfi-98:get-environment-variable "HOME"))))
+               (get-environment-variable "HOME"))))
+
+
+;;; *EOF*

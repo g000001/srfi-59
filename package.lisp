@@ -1,15 +1,25 @@
 ;;;; package.lisp
 
-(cl:in-package :cl-user)
+(cl:in-package common-lisp-user)
 
-(defpackage :srfi-59
+
+(defpackage "https://github.com/g000001/srfi-59"
   (:use)
   (:export
-   :program-vicinity :library-vicinity :implementation-vicinity :user-vicinity
-   :home-vicinity :in-vicinity :sub-vicinity :make-vicinity :pathname->vicinity
-   :vicinity.suffix? ))
+   program-vicinity library-vicinity implementation-vicinity user-vicinity
+   home-vicinity in-vicinity sub-vicinity make-vicinity pathname->vicinity
+   vicinity.suffix? ))
 
-(defpackage :srfi-59.internal
-  (:use :srfi-59 :cl :fiveam :srfi-23)
-  (:shadowing-import-from :srfi-23 :error)
-  (:shadow :lambda :member :assoc :map :loop))
+
+(defpackage "https://github.com/g000001/srfi-59#internals"
+  (:use 
+   "https://github.com/g000001/srfi-59"
+   "https://github.com/g000001/srfi-23"
+   "https://github.com/g000001/srfi-98"
+   cl 
+   fiveam)
+  (:shadowing-import-from :srfi-23 error)
+  (:shadow lambda member assoc map loop))
+
+
+;;; *EOF*

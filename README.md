@@ -1,5 +1,6 @@
-* SRFI 59: Vicinity
-- Copyright (C) Aubrey Jaffer (2004). All Rights Reserved.
+# SRFI 59: Vicinity
+
+* Copyright (C) Aubrey Jaffer (2004). All Rights Reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
